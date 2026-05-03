@@ -1,0 +1,118 @@
+[
+  {
+    "id": 1,
+    "nombre": "Grupo Tropi",
+    "descripcion": "Distribuidor de productos de consumo masivo",
+    "imagen": "img/grupotropi.png",
+    "categorias": [
+      {
+        "nombre": "Abarrotes",
+        "productos": [
+          { 
+            "nombre": "Arroz 1Kg", 
+            "precio": 3500,
+            "imagen": "img/arroz.webp"
+          },
+          { 
+            "nombre": "Azúcar 1Kg", 
+            "precio": 3000,
+            "imagen": "img/azucar.jpg"
+          }
+        ]
+      },
+      {
+        "nombre": "Enlatados",
+        "productos": [
+          { 
+            "nombre": "Atún Lata", 
+            "precio": 4500,
+            "imagen": "img/atun.jpg"
+          },
+          { 
+            "nombre": "Sardinas", 
+            "precio": 3800,
+            "imagen": "img/sardina.jpg"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": 2,
+    "nombre": "Corbeta",
+    "descripcion": "Mayorista de productos para tiendas y supermercados",
+    "imagen": "img/corbeta.png",
+    "categorias": [
+      {
+        "nombre": "Aseo",
+        "productos": [
+          { 
+            "nombre": "Detergente 1Kg", 
+            "precio": 8000,
+            "imagen": "img/detergente.jpg"
+          },
+          { 
+            "nombre": "Jabón en barra", 
+            "precio": 2000,
+            "imagen": "img/jabonenbarra.jpg"
+          }
+        ]
+      },
+      {
+        "nombre": "Hogar",
+        "productos": [
+          { 
+            "nombre": "Papel Higiénico x4", 
+            "precio": 6000,
+            "imagen": "img/papelhigenico.jpg"
+          },
+          { 
+            "nombre": "Servilletas", 
+            "precio": 2500,
+            "imagen": "img/servilletas.jpg"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": 3,
+    "nombre": "Alpina",
+    "descripcion": "Productos lácteos y derivados",
+    "imagen": "img/alpina.jpg",
+    "categorias": [
+      {
+        "nombre": "Yogurt",
+        "productos": [
+          { 
+            "nombre": "Yogurt Fresa 1L", 
+            "precio": 6000,
+            "imagen": "img/yogurt1.jpg"
+          },
+          { 
+            "nombre": "Yogurt Mora 200ml", 
+            "precio": 1800,
+            "imagen": "img/yogurt2.jpg"
+          }
+        ]
+      },
+      {
+        "nombre": "Leches",
+        "productos": [
+          { 
+            "nombre": "Leche Entera 1L", 
+            "precio": 3500,
+            "imagen": "img/leche.jpg"
+          },
+          { 
+            "nombre": "Leche Deslactosada 1L", 
+            "precio": 3800,
+            "imagen": "img/lechedeslactosada.jpg"
+          }
+        ]
+      }
+    ]
+  }
+]

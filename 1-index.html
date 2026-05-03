@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WeAPP</title>
+
+  <meta name="author" content="Jeeferson agredo, Ana artunduaga, Dany muñoz, Deiver arce" />
+  <meta name="description" content="aplicativo para gestion de pedidos" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="shortcut icon" href="img/logo-weapp.ico" type="image/x-icon">
+</head>
+
+<body>
+
+  <!-- Logo -->
+  <img class="logo" src="img/logo-weapp.png" alt="Logo de la empresa">
+
+  <!-- Login -->
+  <section class="login-section">
+    <div class="login-container">
+      <h2>Iniciar Sesión</h2>
+
+      <!-- ✅ FORMULARIO CORRECTO -->
+      <form id="loginForm">
+        <input type="email" id="correo" placeholder="Correo" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button type="submit">Entrar</button>
+      </form>
+
+      <!-- MENSAJE DE ERROR -->
+      <p id="errorMsg" style="color:red; margin-top:10px;"></p>
+
+      <p class="registro">
+        ¿No tienes cuenta? <a href="2-registro.html">Regístrate aquí</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- JS -->
+  <script>
+    // ✅ SI YA INICIÓ SESIÓN → VA AL PANEL
+    const usuarioGuardado = localStorage.getItem("usuario");
+    if (usuarioGuardado) {
+      window.location.href = "6-panel.html";
+    }
+
+    // ✅ LOGIN
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const correo = document.getElementById("correo").value;
+      const password = document.getElementById("password").value;
+      const errorMsg = document.getElementById("errorMsg");
+
+      errorMsg.textContent = "";
+
+      console.log("Enviando:", correo, password); // DEBUG
+
+      fetch("backend/login.php", { // 👈 RUTA RELATIVA (IMPORTANTE)
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ correo, password })
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log("Respuesta:", data);
+
+        if (data.success) {
+          localStorage.setItem("usuario", JSON.stringify(data.usuario));
+          window.location.href = "6-panel.html";
+        } else {
+          errorMsg.textContent = "Correo o contraseña incorrectos";
+        }
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        errorMsg.textContent = "Error en el servidor";
+      });
+    });
+  </script>
+
+</body>
+</html>
